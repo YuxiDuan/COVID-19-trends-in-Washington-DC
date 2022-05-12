@@ -1,0 +1,128 @@
+# Covid-19 in DC
+
+Group Members: Yuxi Duan 
+
+GitHub ID: YuxiDuan
+
+
+## Census Data
+
+The DC Census data came from the DC Office of
+of Planning Website. https://planning.dc.gov/node/1553516 using the 
+"Table 3: District of Columbia Population by
+Ward by Race and Hispanic or Latino Origin 2010 & 2020" on the website. 
+
+The data was cleaned and copied to new csv files. 
+Based on the population calculation and structure of the data in the original
+file, Race and Ethnicity numbers were separated into different files.
+
+Original data file: 
+Table 3 - District of Columbia Population by Ward by Race and Hispanic or Latino Origin 2010 & 2020.xlsx
+
+New data files created:
+DC Population by Ward by Race - Census 2020.csv, 
+DC Population by Ward by Ethnicity - Census 2020.csv
+
+
+## DC Coronavirus Total Cases & Lives Lost
+
+The DC COVID-19 Data was downloaded from the Vaccination Data webpage of the
+DC Government Coronavirus website. https://coronavirus.dc.gov/data/vaccination
+Under the "COVID-19 Data Overview" tab, there is an option to download a copy
+of the DC COVID-19 data. 
+
+The DC COVID-19 data reported Total Cases and Lives Lost organized by Ward,
+Race, Age, and Sex. The sheets used are Total Cases, by Ward,
+Total Cases by Race, Lives Lost by Age, Lives Lost by Race, Lives Lost by Sex,
+and Lives Lost by Ward
+
+We split each tab into its own data file. Each file was clean by
+removing extra rows of blank cells. Data cells that are empty were filled in 
+with a 0. 
+
+Due to how data was separately reported for Race and Ethnicity,
+Race and Ethnicity data were copied to different files. 
+Names of the Race and Ethnicity group were
+updated so they are in sync between different data sets. 
+
+The start data in each data sheet was different. To improve our analysis,
+When used in the Shiny App, we filtered data to start 
+from 4/19/2020 and end on 12/2/21. 
+
+
+Original data file: 
+DC-COVID-19-Data-for-12-2-21.xlsx
+
+New data file created: 
+DC-COVID-19-Lives Lost by Ward.xlsx, 
+DC-COVID-19-Total Cases by Ward.xlsx, 
+DC-COVID-19-Lives Lost by Age.xlsx, 
+DC-COVID-19-Lives Lost by Sex.xlsx, 
+DC-COVID-19-Lives Lost by Race.xlsx, 
+DC-COVID-19-Lives Lost by Ethnicity.xlsx
+
+## DC Vaccination Rate
+The DC Vaccination Rate data was downloaded from the CDC's 
+COVID-19-Vaccination-Trends-in-the-United-States data set. 
+
+https://data.cdc.gov/Vaccinations/COVID-19-Vaccination-Trends-in-the-United-States-N/rh2h-3yt2/data
+
+The data was filtered to only include DC Data. We exported the file as a csv
+file using the website's Export functionality. 
+
+When used in the Shiny App, we filtered the data to
+only include data with data_type of Admin. This represents the number of 
+COVID vaccine administered in DC on a certain day.
+This file includes dc vaccination data starting from 12/3/2021 to 12/2/2021. 
+
+Data file created:
+covid19_vaccinations_in_the_united_states-dc.csv
+
+## DC Vaccination Data - Demographics & Adherence
+
+The DC Vaccination Demographics data was obtained from the 
+Vaccination Data webpage of the DC Government Coronavirus website.
+This data source was selected because other organizations did not provide
+DC vaccination data with Ward, Race, and Ethnicity information
+
+https://coronavirus.dc.gov/data/vaccination
+
+### DC - Vaccination by Ward
+
+The Adherence tab on the website provided a table with the vaccination status
+in all 8 DC Wards. The website did not provide an option to download the data.
+We created an Excel spreadsheet with the data from this table. 
+
+Data file created: 
+DC-Vaccination by Ward.xlsx
+
+### DC - Vaccination by Race & DC - Vaccination by Ethnicity
+
+The Demographics tab on the website provided a table with the vaccination status
+grouped by Race and Ethnicity. From the table drop down, you can select to see
+the data group by Race or Ethnicity groups for each Age group. The website
+did not provide an option to download the data. We created Excel spreadsheets
+with the data from this table
+
+Data file created:
+DC-Vaccination by Race.xlsx, 
+DC-Vaccination by Ethnicity.xlsx
+
+
+## DC Ward Map
+
+The image of the DC Ward map came from the DC Office of Planning website
+https://planning.dc.gov/whatsmyward
+
+## DC Neighborhood information
+
+Names of the different neighborhoods in each DC Ward came from the
+Neighborhoods in Washington, D.C. Wikipedia page. 
+
+https://en.wikipedia.org/wiki/Neighborhoods_in_Washington,_D.C.
+
+Neighborhood names were copied to a csv file used to display neighborhood
+information for each ward in the Shiny App. 
+
+Data file created:
+dc_neighborhood.csv
