@@ -1,0 +1,89 @@
+---
+title: "COVID-19 in DC vignette"
+author: "Yuxi Duan"
+date: "12/14/21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# COVID-19 in DC - Vignette
+
+## Vignette.Case
+This app allows the user to analyze vaccination rates, numbers of cases, and lives lost due to COVID-19. By allowing people to have a simple way to access this information, they can be aware of how their community is being effected. Most of the data is specific to Washington D.C. and includes information by ward. 
+
+Seeing the overall trends of vaccination rates, total cases of COVID-19 and lives lost due to COVID-19 by demographics like ward, age, sex, race, and ethnicity, it can provide accesible information as to how different groups are being effected. This allows the user to see that different groups are being effected in different ways 
+
+## Vignette.RequiredPackages
+
+- shiny
+  Used to design the app.
+- tidyverse
+  Used for data cleaning and other functions. 
+- ggplot2
+  Used for plotting. 
+- openxlsx
+  Used to open Excel files. 
+- lubridate
+  Used to fix dates.
+- shinythemes
+  This allows for the there to be a different theme for the app. 
+- AICcmodavg
+  Used for statistical model. 
+
+## Vignette.DataSource and Structure
+
+A data source we use is the COVID-19 Surveillance data provided by the DC Government. 
+
+https://coronavirus.dc.gov/data
+
+The data file has been replaced by DC-COVID-19-Data-for-12-2-2021 which include addition data that was collected since the Project started. 
+This data set includes COVID data for DC from April 2020 to 12/2/2021
+
+
+We use the CDC Vaccination Data and filter it to only include DC data. This includes vaccination data for DC between 12/13/2020 and 12/2/2021.
+
+https://data.cdc.gov/Vaccinations/COVID-19-Vaccination-Trends-in-the-United-States-N/rh2h-3yt2/data
+
+
+DC Demographic Data we used comes from DC Government's 2020 Census: Information Data. 
+We use the Table 3: District of Columbia Population by Ward by Race and Hispanic or Latino Origin 2010 & 2020. 
+This includes the 2020 Census Data on the racial distribution for Wards in DC. 
+
+https://planning.dc.gov/node/1553516
+
+The data has been cleaned into different categories by demographic like ward, sex, age, and race. It also gives information on vaccination rates, lives lost, and total cases based on these demographics. 
+
+## Vignette.EDA
+The first tab of the app shows general DC demographics to give an overall picture of the makeup (racial) of the wards. The second tab shows vaccination rates by ward, race, ethnicity and age to let the user choose a vaccination status and see the numbers for that category based on demographics. The third tab allows for the user to select a specific date and see total cases or lives lost by ward, race, ethnicity, sex, and age. This allows for the user to visualize what specific dates looked like. The fourth tab allows for the user to select a date range and choose a visualization of total cases or lives lost by ward, race, ethnicity, sex, and age. This allows for the user to see how these changed over time and whether there are trends that are occurring based on dates.
+
+## Vignette.Statistical Analysis
+The models show that the null is rejected because the p is smaller than 0.05. The r-squared means that there is a 82% variance and all the observations are significant. The estimate shows MMWR_week, administered daily, and booster cumulative are all positive. Administered dose 1 daily and administered series are negative. The full model uses all of the variables, while the smaller model uses part of them. The AIC value shows that the full model is better. 
+
+## Vignette.References
+
+Beckham, Aja, et al. “Black D.C. Residents Want the COVID-19 Vaccine. but the Barriers to Access Are Many.” NPR, NPR, 28 Jan. 2021, https://www.npr.org/local/305/2021/01/28/961192594/black-d-c-residents-want-the-c-o-v-i-d-19-vaccine-but-the-barriers-to-access-are-many. 
+
+Gomez, Amanda Michelle. “D.C. Meets White House Goal with 70 Percent of Adults Partially Vaccinated.” Washington City Paper, 14 June 2021, https://washingtoncitypaper.com/article/518742/d-c-vaccinations-near-seventy-percent-goal/. 
+
+Leslie Shapiro, Youjin Shin. “Tracking Coronavirus Deaths, Cases and Vaccinations in D.C., Maryland and Virginia.” The Washington Post, WP Company, 12 Oct. 2021, https://www.washingtonpost.com/graphics/local/dc-maryland-virginia-coronavirus-cases/. 
+
+Lin, Cheryl, Pikuei Tu, and Leslie M. Beitsch. “Confidence and Receptivity for COVID-19 Vaccines: A Rapid Systematic Review.” Vaccines 9.1 (2020): 16. Crossref. Web.
+
+Murthy, Bhavini Patel, et al. “Disparities in Covid-19 Vaccination Coverage between Urban and Rural Counties - United States, December 14, 2020-April 10, 2021.” MMWR. Morbidity and Mortality Weekly Report, Centers for Disease Control and Prevention, 21 May 2021, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8136424/. 
+
+Nambi Ndugga, Latoya Hill. “Latest Data on Covid-19 Vaccinations by Race/Ethnicity.” KFF, 2 Dec. 2021, https://www.kff.org/coronavirus-covid-19/issue-brief/latest-data-on-covid-19-vaccinations-by-race-ethnicity/. 
+
+“Racial Disparities in Washington, DC and Covid-19 Vaccine.” NAACP Legal Defense and Educational Fund, 2 Apr. 2021, https://www.naacpldf.org/naacp-publications/ldf-blog/chocolate-city-vanilla-vaccine-racial-disparities-in-washington-dc-covid-19-vaccine-administration/. 
+
+Soares, Patricia, et al. “Factors Associated with COVID-19 Vaccine Hesitancy.” Vaccines, MDPI, 22 Mar. 2021, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8004673/. 
+
+Stein, Perry. “With Youth Vaccine Rates Still Low, D.C. Awards First College Scholarship as Part of Incentive Program.” The Washington Post, WP Company, 7 Oct. 2021, https://www.washingtonpost.com/local/education/covid-vaccine-scholarship-dc/2021/10/06/9f38fd0a-26c0-11ec-8d53-67cfb452aa60_story.html. 
+
+“Voices of Wards 7 and 8: Covid-19 Vaccinations.” DCist, 11 Aug. 2021, https://dcist.com/story/21/08/02/voices-of-wards-7-and-8-covid19-vaccinations/. 
+
+
+
+
